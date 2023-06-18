@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spreading+</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<nav class="list">
+		<ul>
+			<li><a href ="/">Главная</a></li>
+			<li><a href = "1.html">Советы</a></li>
+			<li><a href ="2.html">Таблица Шульте</a></li>
+		</ul>
+		</nav>
+		<div>
+			<table id="root" cellspacing="0" cellpadding="0"></table>
+		</div>
+		<script>
+			let root = document.getElementById('root'),
+				rows = 5, cols = 5,
+				dimension = (rows * cols);
+			new Array(rows).fill().reduce((c, n) => {
+					let row = document.createElement('tr');
+					c.splice(0, cols).map((e) => {
+						let cell = document.createElement('td');
+						cell.className = 'cell';
+						cell.innerHTML = e;
+						row.appendChild(cell);
+					});
+					root.appendChild(row);
+					return c;
+				},
+				Array.from(Array(dimension + 1).keys()).splice(1)
+					.sort(() => 0.5 - Math.random())
+			)
+		</script>
+</body>
+</html>
