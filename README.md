@@ -1,2 +1,2 @@
-# xadecoride.github.io
+# fastreading
 This my first project in front-end dev
